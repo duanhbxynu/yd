@@ -10,11 +10,11 @@
 		<link rel="stylesheet" type="text/css" href="../../css/select/select2.css"/>
 		<link rel="stylesheet" type="text/css" href="../../css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/plugins/iCheck/custom.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/form.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/plugins/dataTables/dataTables.bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/plugins/chosen/chosen.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/animate.css" />
-		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/jquery.datatables.css"/>
 		<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap-table/bootstrap-table.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../../js/plugins/layer/skin/layer.css"/>
@@ -36,39 +36,25 @@
 							<div class="ibox-content yd_table2 ">
 								<div class="row">
 									<div class="col-md-4 yd_flex form-group col-sm-6">
-										<label for="" class="yd_label col-md-4 col-sm-4">所属门店:</label>
-										<div class="select2-container form-control hell select2 from-control11 col-md-8 col-sm-8 select22" ">
-											<a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" >---请选择---</span><abbr class="select2-search-choice-close"></abbr></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" >
-											<div class="select2-drop select2-display-none select2-with-searchbox">
-												<div class="select2-search"> <label for="s2id_autogen1_search" class="select2-offscreen"></label> <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" placeholder=""> </div>
-												<ul class="select2-results" role="listbox" > </ul>
-											</div>
-										</div>
-										<select class="form-control hell select2 from-control11 col-md-8 col-sm-8 select22" tabindex="-1" title="" style="display: none;">
-											<option value="" class="yd_kong">---请选择---</option>
-											<option value="3101">永达奥迪世博店</option>
-											<option value="3103">宝诚浦西店</option>
-											<option value="3104">宝诚申江店</option>
-											<option value="3105">永达捷豹路虎龙东店</option>
-											<option value="3102">永达奥迪宝山店</option>
-											<option value="1402">太原宝诚店</option>
-
-										</select>
-									</div>
-
-									<div class="col-md-4 yd_flex col-sm-6 form-group">
-										<label for="" class="col-md-3 yd_label col-sm-3 ">创建时间:</label>
-										<div class="col-md-9 col-sm-9 yd_labell col-xs-12">
-											<input name="creationtimeStart"  readonly="readonly" value="" class="laydate-icon form-control yd_yd_time layer-date yd_data form-control" placeholder="创建时间 开始">
-										</div>
-									</div>
-
-									<div class="form-group col-md-4  yd_flex col-sm-6">
-										<label class="yd_label33 col-md-3 col-sm-3">结束时间:</label>
-										<div class="col-md-9 col-sm-9 yd_labell col-xs-12">
-											<input name="creationtimeEnd"  readonly="readonly" value="" class="laydate-icon form-control yd_yd_time layer-date yd_data form-control" placeholder="创建时间 结束">
-										</div>
-									</div>
+		                                <label for="" class="yd_label col-md-4 col-sm-4">所属门店:</label>
+		                                <select id="belongStore" class="form-control hell select2 from-control11 col-md-8 col-sm-8 select22">
+		                                    <option value="1" class="yd_kong">---请选择---</option>
+		                                    <option value="2">奥迪世博店</option>
+		                                </select>
+		                            </div>
+									 <div class="col-md-4 yd_flex col-sm-6 form-group">
+		                                <label for="" class="col-md-3 yd_label col-sm-3 ">创建时间:</label>
+		                                <div class="col-md-9 col-sm-9 yd_labell col-xs-12">
+		                                    <input name="startTimes" id="startTimes" readonly="readonly"  value="" class="laydate-icon form-control yd_yd_time layer-date yd_data form-control" placeholder="创建时间 开始">
+		                                </div>
+		                            </div>
+		
+		                            <div class="form-group col-md-4  yd_flex col-sm-6">
+		                                <label class="yd_label33 col-md-3 col-sm-3">结束时间:</label>
+		                                <div class="col-md-9 col-sm-9 yd_labell col-xs-12">
+		                                    <input name="endTimes" id="endTimes" readonly="readonly"  value="" class="laydate-icon form-control yd_yd_time layer-date yd_data form-control" placeholder="创建时间 结束">
+		                                </div>
+		                            </div>
 
 									<div class="col-md-4 yd_flex form-group col-sm-6">
 										<label for="" class="yd_label col-md-4 col-sm-4">输入搜索:</label>
@@ -301,5 +287,19 @@
 	<script src="../../js/plugins/iCheck/icheck.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../js/plugins/layer/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../js/publicjs/date.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#area").select2();
+			$("#belongStore").select2();
+		})
+		laydate({
+			elem: '#startTimes',
+			event: 'focus' 
+		});
+		laydate({
+			elem: '#endTimes',
+			event: 'focus' 
+		});
 	
+    </script>
 </html>
