@@ -23,7 +23,7 @@
 	</head>
 <head>
 <body class="gray-bg">
-		<form>
+		<form id="customerOrderList">
 			<div class="wrapper wrapper-content animated fadeInRight table00">
 				<div class="row">
 					<div class="col-sm-12">
@@ -287,19 +287,7 @@
 	<script src="../../js/plugins/iCheck/icheck.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../js/plugins/layer/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../js/publicjs/date.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#area").select2();
-			$("#belongStore").select2();
-		})
-		laydate({
-			elem: '#startTimes',
-			event: 'focus' 
-		});
-		laydate({
-			elem: '#endTimes',
-			event: 'focus' 
-		});
-	
-    </script>
+	<script src="../../js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--自定义js-->
+	<script src="../../js/ydCustomer/ydCustomer.js" type="text/javascript" charset="utf-8"></script>
 </html>
